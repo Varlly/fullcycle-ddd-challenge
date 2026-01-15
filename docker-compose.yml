@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    container_name: node_ddd
+    ports:
+      - "3000:3000"
+    volumes:    
+      - ./app:/usr/src/app
+      - /usr/src/app/node_modules
+    command: npx nodemon --exec ts-node src/index.ts    
+    environment:
+      - NODE_ENV=development

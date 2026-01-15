@@ -1,0 +1,69 @@
+{
+  // =========================
+  // TEMA E ÍCONES
+  // =========================
+  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.iconTheme": "material-icon-theme",
+
+  // =========================
+  // EDITOR (FONTE / VISUAL)
+  // =========================
+  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 14,
+  "editor.lineHeight": 22,
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "none",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.smoothScrolling": true,
+
+  // =========================
+  // LAYOUT
+  // =========================
+  "workbench.sideBar.location": "left",
+  "workbench.activityBar.location": "top",
+  "breadcrumbs.enabled": true,
+  "explorer.compactFolders": false,
+
+  // =========================
+  // ABAS / JANELAS
+  // =========================
+  "workbench.editor.showTabs": "multiple",
+  "workbench.editor.tabSizing": "shrink",
+  "window.commandCenter": false,
+
+  // =========================
+  // ENV / BACKEND
+  // =========================
+  "files.associations": {
+    ".env": "dotenv",
+    ".env.*": "dotenv"
+  },
+
+  // =========================
+  // QUALIDADE DE VIDA
+  // =========================
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always"
+  },
+
+  // =========================
+  // EXPLORER
+  // =========================
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+
+  // =========================
+  // GIT
+  // =========================
+  "git.enableSmartCommit": true,
+
+  // Barra de rolagem vertical fina
+  "editor.scrollbar.verticalScrollbarSize": 1,
+  "editor.scrollbar.horizontalScrollbarSize": 6,
+
+  // Não reservar espaço fixo
+  "editor.scrollbar.vertical": "auto",
+  "editor.scrollbar.horizontal": "auto"
+}
