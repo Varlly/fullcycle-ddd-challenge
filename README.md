@@ -69,4 +69,3 @@ docker run --rm -p 3000:3000 --name ddd-app ddd-app:latest
 - `npm test` executa `tsc` antes do `jest` (ver `package.json`).
 - O projeto usa SQLite em memória para testes, então não há dependências externas para os testes.
 
-Se quiser, eu posso adicionar um `Dockerfile` e um `docker-compose.yml` pronto.```
