@@ -1,71 +1,126 @@
-# ddd-app
+# 🏗️ ddd-app
 
-Este repositório contém uma aplicação de exemplo (DDD) em TypeScript com testes usando Jest.
+> Uma aplicação de exemplo implementando os princípios de **Domain-Driven Design (DDD)** em TypeScript com testes automatizados.
 
-## Requisitos
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=flat&logo=typescript&logoColor=white)
+![Jest](https://img.shields.io/badge/jest-C21325?style=flat&logo=jest&logoColor=white)
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=flat&logo=docker&logoColor=white)
+![Node.js](https://img.shields.io/badge/node.js-339933?style=flat&logo=node.js&logoColor=white)
 
-- Node.js 18+ / npm
-- Docker (opcional, para rodar em container)
+---
 
-## Instalação
+## 📋 Sumário
 
-Instale dependências:
+- [Requisitos](#-requisitos)
+- [Instalação](#-instalação)
+- [Como Usar](#-como-usar)
+- [Docker](#-docker)
+- [Notas](#-notas)
+
+---
+
+## 📦 Requisitos
+
+- **Node.js** 18+ com npm
+- **Docker** e **Docker Compose** (opcional, para containerização)
+
+---
+
+## 🚀 Instalação
+
+Clone o repositório e instale as dependências:
 
 ```bash
 npm install
 ```
 
-## Rodando os testes
+---
 
-Executar validação do TypeScript e testes:
+## 🎯 Como Usar
+
+### ✅ Rodando os testes
+
+Executar validação de tipos + Jest:
 
 ```bash
 npm test
 ```
 
-Para rodar apenas o Jest (ignorando `tsc`):
+Ou rodar apenas o Jest:
 
 ```bash
 npx jest
 ```
 
-## Rodando a aplicação localmente
+### 🎮 Rodando a aplicação localmente
 
 ```bash
 npm start
 ```
 
-## Rodando com Docker
+A aplicação estará disponível em `http://localhost:3000`
 
-Exemplo simples para construir uma imagem e rodar o container.
+---
 
-1. Crie um `Dockerfile` (se já não existir). Exemplo mínimo:
+## 🐳 Docker
 
-```dockerfile
-FROM node:18-alpine
-WORKDIR /app
-COPY package.json package-lock.json* ./
-RUN npm install --production
-COPY . .
-CMD ["npm", "start"]
+### 🔵 Usando docker-compose (Recomendado ⭐)
+
+A forma mais rápida e simples de iniciar a aplicação:
+
+```bash
+docker-compose up
 ```
 
-2. Build da imagem:
+**Isso irá:**
+- ✅ Construir a imagem automaticamente
+- ✅ Instalar todas as dependências
+- ✅ Iniciar o servidor em modo desenvolvimento com `nodemon`
+- ✅ Expor a aplicação na porta `3000`
+
+Para parar a aplicação:
+
+```bash
+docker-compose down
+```
+
+---
+
+### 🔶 Usando Docker puro (sem docker-compose)
+
+**1. Build da imagem:**
 
 ```bash
 docker build -t ddd-app:latest .
 ```
 
-3. Rodar container:
+**2. Rodar o container:**
 
 ```bash
 docker run --rm -p 3000:3000 --name ddd-app ddd-app:latest
 ```
 
-> Observação: a aplicação de exemplo não expõe necessariamente a porta `3000`. Ajuste `-p`/`CMD` conforme necessário.
+---
 
-## Notas
+### 🧪 Rodando testes no Docker
 
-- `npm test` executa `tsc` antes do `jest` (ver `package.json`).
-- O projeto usa SQLite em memória para testes, então não há dependências externas para os testes.
+```bash
+docker-compose exec app npm test
+```
+
+> **⚠️ Nota importante**: O Dockerfile instala TODAS as dependências (incluindo devDependencies) necessárias para `ts-node`, `jest` e testes funcionarem corretamente.
+
+---
+
+## 📝 Notas
+
+- `npm test` executa a validação de tipos (`tsc`) antes do `jest`
+- O projeto usa **SQLite em memória** para testes (sem dependências externas)
+- Estrutura baseada em **Domain-Driven Design** com separação clara de camadas
+
+---
+
+## 📄 Licença
+
+MIT
 

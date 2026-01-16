@@ -5,10 +5,10 @@ WORKDIR /usr/src/app
 
 COPY app/package*.json ./
 
-RUN npm install --legacy-peer-deps
+RUN npm install
 
 COPY app/ .
 
 EXPOSE 3000
 
-CMD ["ts-node", "src/index.ts"]
+CMD ["npm", "start"]
