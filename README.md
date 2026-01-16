@@ -84,6 +84,20 @@ Para parar a aplicação:
 docker-compose down
 ```
 
+#### 🔄 Forçar rebuild da imagem
+
+Se você fez mudanças no `Dockerfile` ou `package.json` e quer garantir que a imagem será reconstruída:
+
+```bash
+DOCKER_BUILDKIT=1 docker-compose up -d
+```
+
+Ou com rebuild forçado:
+
+```bash
+docker-compose up --build -d
+```
+
 ---
 
 ### 🔶 Usando Docker puro (sem docker-compose)
@@ -91,13 +105,13 @@ docker-compose down
 **1. Build da imagem:**
 
 ```bash
-docker build -t ddd-app:latest .
+docker build -t node_ddd:latest .
 ```
 
 **2. Rodar o container:**
 
 ```bash
-docker run --rm -p 3000:3000 --name ddd-app ddd-app:latest
+docker run --rm -p 3000:3000 --name node_ddd node_ddd:latest
 ```
 
 ---
