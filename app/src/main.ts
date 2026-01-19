@@ -1,6 +1,6 @@
 import OrderItem from "./domain/entity/order_item.js";
-import Customer from "./domain/entity/customer.js";
-import Address from "./domain/entity/address.js";
+import Customer from "./domain/customer/entity/customer.js";
+import Address from "./domain/customer/value-object/address.js";
 import Order from "./domain/entity/order.js";
 
 let customer = new Customer("1", "John Doe");
